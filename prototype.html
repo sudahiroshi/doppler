@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>prototype</title>
+</head>
+<body>
+  <canvas id="cv" width="1000" height="300"></canvas>
+  <form id="simulator_values">
+    <span>f</span>
+    <input type="range" id="generator_frequency" min="0" max="4.0" step="0.1" value="2.0">
+    <span id="value2">0.5</span><br>
+
+    <span>t</span>
+    <input type="range" id="generator_velocity" min="-2.0" max="2.0" step="0.2" value="1.0">
+    <span id="value">1.0</span><br>
+
+    <span>u</span>
+    <input type="range" id="observer_velocity" min="-2.0" max="2.0" step="0.2" value="0.5">
+    <span id="value1">0.5</span>
+
+    <input type="button" value="start" onclick="onStartButtonClick();">
+    <input type="button" value="stop" onclick ="onStopButtonClick();">
+  </form>
+  <script>
+    var flag = true;
+    var elem = document.getElementById('generator_velocity');
+    var target = document.getElementById('value');
+    var rangeValue = function(elem, target) {
+      return function(evt) {
+        target.innerHTML = elem.value;
+      }
+    }
+    elem.addEventListener('input', rangeValue(elem, target));
+  </script>
+  <script src="figure.js"></script>
+  <script src="stop.js"></script>
+  <script src="start.js"></script>
+  <!-- <script src="test.js"></script> -->
+</body>
+</html>

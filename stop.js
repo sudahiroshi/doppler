@@ -1,0 +1,3 @@
+function onStopButtonClick() {
+  flag = false;
+}
