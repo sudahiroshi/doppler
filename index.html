@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="stylesheet.css">
+  <script src="phenom.js"></script>
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <title>ドップラー効果</title>
+</head>
+<body>
+  <div id="anim">
+
+    <div class="graph_cv graph_1">
+      <hr>
+    </div>
+
+    <canvas id="phenom_cv"></canvas>
+
+    <div class="graph_cv graph_2">
+      <hr>
+    </div>
+
+    <div class="graph_cv graph_3">
+      <hr>
+    </div>
+
+  </div>
+
+  <div id="box">
+
+    <div id="doppler">
+
+      <div id="formula">
+        <p>
+          ドップラー効果
+        </p>
+        <p>
+          \[ f'=\frac{V\pm{v_o}}{V\pm{v_s}}f \]
+        </p>
+      </div>
+
+      <div id="alpha">
+        <p>
+          \(f\)：音源での周波数 \([\mbox{Hz}]\)
+        </p>
+        <p>
+          \(f'\)：観測者での周波数 \([\mbox{Hz}]\)
+        </p>
+        <p>
+          \(v_s\)：音源の動く速度 \([\mbox{m/s}]\)
+        </p>
+        <p>
+          \(v_o\)：観測者の動く速度 \([\mbox{m/s}]\)
+        </p>
+        <p>
+          \(V\)：音速 \([\mbox{m/s}]\)
+        </p>
+      </div>
+
+    </div>
+
+    <div id="operation">
+
+      <div id="select-wrapper">
+        <p>
+          音の高さ
+          <select name="pitch">
+            <option value="0">0</option>
+          </select>
+        </p>
+        <p>
+          音源の速度
+          <select name="pitch">
+            <option value="0">0</option>
+          </select>
+        </p>
+        <p>
+          観測者の速度
+          <select name="pitch">
+            <option value="0">0</option>
+          </select>
+        </p>
+      </div>
+
+      <div id="btn-wrapper">
+        <button type="button">スタート</button>
+        <button type="button">ストップ</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="phenom.js"></script>
+</body>
+</html>

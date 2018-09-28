@@ -1,0 +1,121 @@
+html {
+  border: solid;
+  width: 900px;
+  height: 680px;
+  font-family: "HiraMaruProN-W4";
+}
+
+div {
+  text-align: center;
+  font-size: 30px;
+}
+
+#anim {
+  background: rgba(97, 104, 106, 0.31);
+  height: 485px;
+  padding-top: 30px;
+  line-height: 0;
+}
+
+.graph_cv {
+  background: white;
+  width: 850px;
+  height: 90px;
+  display: inline-block;
+  margin: 4px 0;
+}
+
+.graph_cv hr {
+  margin-top: 45px;
+  border: dashed .5px;
+}
+
+#phenom_cv {
+  background: white;
+  width: 850px;
+  height: 170px;
+  display: inline-block;
+  margin: 8px 0;
+}
+
+#doppler {
+  background: rgba(255, 153, 0, 0.4);
+  width: 55%;
+  text-align: left;
+}
+
+#formula {
+  margin: 15px 25px;
+}
+
+#formula p {
+  font-size: 22px;
+  margin: 0;
+}
+
+#alpha {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+#alpha p {
+  font-size: 16px;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 1px;
+}
+
+#formula, #alpha {
+  float: left;
+}
+
+#operation {
+  background: rgba(4, 143, 9, 0.38);
+  width: 45%;
+}
+
+#select-wrapper {
+  font-size: 25px;
+  margin-top: 8px;
+  margin-left: 25px;
+  margin-right: 17px;
+}
+
+#select-wrapper p {
+  margin-top: 0;
+  margin-bottom: 16px;
+  height: 30px;
+  text-align: right;
+}
+
+#select-wrapper select {
+  background: white;
+  width: 60px;
+  height: 32px;
+  vertical-align: middle;
+  font-size: 20px;
+}
+
+#btn-wrapper {
+  margin: 15px 0px;
+}
+
+#btn-wrapper button {
+  background: white;
+  height: 55px;
+  width: 120px;
+  margin-bottom: 10px;
+  padding: 0;
+  display: block;
+  font-size: 20px;
+}
+
+#select-wrapper, #btn-wrapper {
+  float: left;
+  height: 100%;
+}
+
+#doppler, #operation {
+  float: left;
+  height: 150px;
+}
