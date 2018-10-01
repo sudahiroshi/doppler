@@ -1,23 +1,18 @@
 html {
-  border: solid;
   width: 900px;
   height: 680px;
   font-family: "HiraMaruProN-W4";
-}
-
-div {
   text-align: center;
-  font-size: 30px;
 }
 
-#anim {
+#anim-area {
   background: rgba(97, 104, 106, 0.31);
   height: 485px;
   padding-top: 30px;
   line-height: 0;
 }
 
-.graph_cv {
+#graph-cv {
   background: white;
   width: 850px;
   height: 90px;
@@ -25,30 +20,28 @@ div {
   margin: 4px 0;
 }
 
-.graph_cv hr {
+#graph-cv hr {
   margin-top: 45px;
   border: dashed .5px;
 }
 
-#phenom_cv {
+#phenom-cv {
   background: white;
-  width: 850px;
-  height: 170px;
   display: inline-block;
   margin: 8px 0;
 }
 
-#doppler {
+#formula-area {
   background: rgba(255, 153, 0, 0.4);
   width: 55%;
   text-align: left;
 }
 
-#formula {
+#doppler {
   margin: 15px 25px;
 }
 
-#formula p {
+#doppler p {
   font-size: 22px;
   margin: 0;
 }
@@ -65,11 +58,11 @@ div {
   margin-bottom: 1px;
 }
 
-#formula, #alpha {
+#doppler, #alpha {
   float: left;
 }
 
-#operation {
+#ope-area {
   background: rgba(4, 143, 9, 0.38);
   width: 45%;
 }
@@ -115,7 +108,7 @@ div {
   height: 100%;
 }
 
-#doppler, #operation {
+#formula-area, #ope-area {
   float: left;
   height: 150px;
 }

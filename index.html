@@ -3,37 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="stylesheet.css">
-  <script src="phenom.js"></script>
   <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <script>
+    srcList = [
+      "soundsource.svg",
+      "observer_stop.svg",
+      "observer_run.svg"
+    ];
+    imgList = [];
+
+    for (var i = 0; i < 3; i++) {
+      imgList[i] = new Image();
+      imgList[i].src = srcList[i];
+    }
+  </script>
   <title>ドップラー効果</title>
 </head>
 <body>
-  <div id="anim">
+  <div id="anim-area">
 
-    <div class="graph_cv graph_1">
+    <div id="graph-cv" class="graph-1">
       <hr>
     </div>
 
-    <canvas id="phenom_cv"></canvas>
+    <canvas id="phenom-cv" width="850" height="170"></canvas>
 
-    <div class="graph_cv graph_2">
+    <div id="graph-cv" class="graph-2">
       <hr>
     </div>
 
-    <div class="graph_cv graph_3">
+    <div id="graph-cv" class="graph-3">
       <hr>
     </div>
 
   </div>
 
-  <div id="box">
+  <div id="area-wrapper">
 
-    <div id="doppler">
+    <div id="formula-area">
 
-      <div id="formula">
+      <div id="doppler">
         <p>
           ドップラー効果
         </p>
+
         <p>
           \[ f'=\frac{V\pm{v_o}}{V\pm{v_s}}f \]
         </p>
@@ -59,32 +72,38 @@
 
     </div>
 
-    <div id="operation">
+    <div id="ope-area">
 
       <div id="select-wrapper">
         <p>
           音の高さ
-          <select name="pitch">
-            <option value="0">0</option>
+          <select id="pitch">
+            <option value="20">1</option>
+            <option value="30">2</option>
+            <option value="40">3</option>
           </select>
         </p>
         <p>
           音源の速度
-          <select name="pitch">
+          <select id="source-vel">
             <option value="0">0</option>
+            <option value=".4">1</option>
+            <option value=".6">2</option>
           </select>
         </p>
         <p>
           観測者の速度
-          <select name="pitch">
+          <select id="observer-vel">
             <option value="0">0</option>
+            <option value=".2">1</option>
+            <option value=".3">2</option>
           </select>
         </p>
       </div>
 
       <div id="btn-wrapper">
-        <button type="button">スタート</button>
-        <button type="button">ストップ</button>
+        <button type="button" onclick="onStartButtonClick();">スタート/</br>ストップ</button>
+        <button type="button" onclick="onResetButtonClick();">リセット</button>
       </div>
 
     </div>
@@ -92,5 +111,6 @@
   </div>
 
   <script src="phenom.js"></script>
+  <script src="anim.js"></script>
 </body>
 </html>
