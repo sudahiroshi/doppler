@@ -75,7 +75,15 @@
     <div id="ope-area">
 
       <div id="select-wrapper">
-        <p>
+        <form id="select-form">
+          <select id="select-box" onchange="onChangeSelectBox()">
+            <option value="1">観測者が静止している場合</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </form>
+
+        <!-- <p>
           音の高さ
           <select id="pitch">
             <option value="20">1</option>
@@ -98,7 +106,7 @@
             <option value=".2">1</option>
             <option value=".3">2</option>
           </select>
-        </p>
+        </p> -->
       </div>
 
       <div id="btn-wrapper">
@@ -110,7 +118,7 @@
 
   </div>
 
-  <script src="phenom.js"></script>
-  <script src="anim.js"></script>
+  <script src="objects.js"></script>
+  <script src="animation.js"></script>
 </body>
 </html>

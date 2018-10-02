@@ -54,7 +54,7 @@ class Wave {
 
   update(source_x) {
     if (source_x >= this.x - 45) {
-      this.radius += 1;
+      this.radius += 1.4;
     } else {
       this.radius = 0;
     }
