@@ -2,17 +2,19 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="stylesheet.css">
-  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <link rel="stylesheet" href="../css/stylesheet.css">
+  <script async src="../MathJax-2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
   <script>
-    srcList = [
-      "soundsource.svg",
-      "observer_stop.svg",
-      "observer_run.svg"
+    // 画像のロード
+    var srcList = [
+      "../img/soundsource.svg",
+      "../img/observer_stop.svg",
+      "../img/observer_run.svg",
+      "../img/observer_run_reverse.svg"
     ];
-    imgList = [];
+    var imgList = [];
 
-    for (var i = 0; i < 3; i++) {
+    for (var i = 0; i < srcList.length; i++) {
       imgList[i] = new Image();
       imgList[i].src = srcList[i];
     }
@@ -26,7 +28,7 @@
       <hr>
     </div>
 
-    <canvas id="phenom-cv" width="850" height="170"></canvas>
+    <canvas id="phenom-cvs" width="850" height="170"></canvas>
 
     <div id="graph-cv" class="graph-2">
       <hr>
@@ -46,7 +48,6 @@
         <p>
           ドップラー効果
         </p>
-
         <p>
           \[ f'=\frac{V\pm{v_o}}{V\pm{v_s}}f \]
         </p>
@@ -74,51 +75,39 @@
 
     <div id="ope-area">
 
-      <div id="select-wrapper">
-        <form id="select-form">
-          <select id="select-box" onchange="onChangeSelectBox()">
-            <option value="1">観測者が静止している場合</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-          </select>
-        </form>
+      <select id="select-box" onchange="onChangeSelectBox()">
+        <optgroup label="どちらかが静止">
+          <option value="1" selected>① 観測者が静止しているとき</option>
+          <option value="2">② 観測者が静止しているとき (ゆっくり)</option>
+          <option value="3">③ 音源が静止しているとき</option>
+          <option value="4">④ 音源が静止しているとき (ゆっくり)</option>
+        </optgroup>
+        <optgroup label="両方とも動く">
+          <option value="5">⑤ 音源が観測者を追い越すとき</option>
+          <option value="6">⑥ 観測者が音源を追い越すとき</option>
+          <option value="7">⑦ 音源と観測者がすれ違うとき</option>
+        </optgroup>
+        <optgroup label="両方とも静止">
+          <option value="8">⑧ 音源と観測者が静止しているとき</option>
+        </optgroup>
+      </select>
 
-        <!-- <p>
-          音の高さ
-          <select id="pitch">
-            <option value="20">1</option>
-            <option value="30">2</option>
-            <option value="40">3</option>
-          </select>
-        </p>
-        <p>
-          音源の速度
-          <select id="source-vel">
-            <option value="0">0</option>
-            <option value=".4">1</option>
-            <option value=".6">2</option>
-          </select>
-        </p>
-        <p>
-          観測者の速度
-          <select id="observer-vel">
-            <option value="0">0</option>
-            <option value=".2">1</option>
-            <option value=".3">2</option>
-          </select>
-        </p> -->
+      <div id="freq-wrapper">
+        <span>\(f'\)</span>
+        <input id="freq" type="text" value="400.00">
+        <span>\([\mbox{Hz}]\)</span>
       </div>
 
       <div id="btn-wrapper">
-        <button type="button" onclick="onStartButtonClick();">スタート/</br>ストップ</button>
-        <button type="button" onclick="onResetButtonClick();">リセット</button>
+        <button id="start-btn" type="button" onclick="onStartButtonClick();">スタート / ストップ</button>
+        <button id="reset-btn" type="button" onclick="onResetButtonClick();">リセット</button>
       </div>
 
     </div>
 
   </div>
-
-  <script src="objects.js"></script>
-  <script src="animation.js"></script>
+  <script src="../js/objects.js"></script>
+  <script src="../js/drawing.js"></script>
+  <script src="../js/animation.js"></script>
 </body>
 </html>

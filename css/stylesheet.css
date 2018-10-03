@@ -1,0 +1,122 @@
+html {
+  width: 900px;
+  height: 680px;
+  text-align: center;
+  font-family: "Hiragino Kaku Gothic ProN";
+}
+
+*:focus {
+  outline: none;
+}
+
+#anim-area {
+  background: rgba(97, 104, 106, 0.31);
+  height: 485px;
+  padding-top: 30px;
+  line-height: 0;
+}
+
+#graph-cv {
+  background: white;
+  width: 850px;
+  height: 90px;
+  display: inline-block;
+  margin: 4px 0;
+}
+
+#graph-cv hr {
+  margin-top: 45px;
+  border: dashed .5px;
+}
+
+#phenom-cvs {
+  background: white;
+  display: inline-block;
+  margin: 8px 0;
+}
+
+#formula-area {
+  background: rgba(255, 153, 0, 0.4);
+  width: 52%;
+  text-align: left;
+}
+
+#doppler {
+  margin: 15px 25px;
+}
+
+#doppler p {
+  font-size: 22px;
+  margin: 0;
+}
+
+#alpha {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+#alpha p {
+  font-size: 16px;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 1px;
+}
+
+#doppler, #alpha {
+  float: left;
+}
+
+#ope-area {
+  background: rgba(4, 143, 9, 0.38);
+  width: 48%;
+}
+
+#select-box {
+  background: white;
+  width: 380px;
+  height: 30px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 17px;
+  vertical-align: middle;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+#freq-wrapper {
+  margin-top: 40px;
+  margin-left: 30px;
+}
+
+#freq {
+  height: 30px;
+  width: 70px;
+  font-size: 20px;
+  margin-left: 5px;
+  padding: 0 5px;
+}
+
+#btn-wrapper {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+#btn-wrapper button {
+  background: white;
+  height: 50px;
+  width: 180px;
+  margin-bottom: 5px;
+  padding: 0;
+  display: block;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+#freq-wrapper, #btn-wrapper {
+  float: left;
+}
+
+#formula-area, #ope-area {
+  float: left;
+  height: 150px;
+}
