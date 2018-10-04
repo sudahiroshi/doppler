@@ -22,27 +22,75 @@
   <title>ドップラー効果</title>
 </head>
 <body>
-  <div id="anim-area">
 
-    <div id="graph-cv" class="graph-1">
-      <hr>
+  <div id="user-area">
+
+    <div id="section-wrapper">
+
+      <div id="ope-section">
+
+        <select id="select-box" onchange="onChangeSelectBox()">
+          <optgroup label="どちらかが止まっている場合">
+            <option value="1">① 立ち止まる人のそばを車が通り過ぎるとき</option>
+            <option value="2">② 立ち止まる人のそばを車が通り過ぎるとき (ゆっくり)</option>
+            <option value="3">③ 停車中の車のそばを人が通り過ぎるとき</option>
+            <option value="4">④ 停車中の車のそばを人が通り過ぎるとき (ゆっくり)</option>
+          </optgroup>
+          <optgroup label="両方とも動く場合">
+            <option value="5">⑤ 車が人を追い抜くとき</option>
+            <option value="6" selected>⑥ 人が車を追い抜くとき</option>
+            <option value="7">⑦ 車と人がすれ違うとき</option>
+          </optgroup>
+          <optgroup label="両方とも止まっている場合">
+            <option value="8">⑧ 車と人が止まっているとき</option>
+          </optgroup>
+        </select>
+
+        <div id="btn-wrapper">
+          <button id="start-btn" type="button" onclick="onStartButtonClick();">スタート / ストップ</button>
+          <button id="reset-btn" type="button" onclick="onResetButtonClick();">リセット</button>
+        </div>
+
+      </div>
+
+      <div id="calc-section">
+
+        <div id="data-top">
+          <div class="data">
+            <span>\(V\)</span>
+            <span id="sound-vel" class="value">340.00</span>
+            <span class="unit">\([\mbox{m/s}]\)</span>
+          </div>
+          <div class="data">
+            <span>\(v_s\)</span>
+            <span id="source-vel" class="value">40.00</span>
+            <span class="unit">\([\mbox{m/s}]\)</span>
+          </div>
+          <div class="data">
+            <span>\(v_o\)</span>
+            <span id="observer-vel" class="value">0.00</span>
+            <span class="unit">\([\mbox{m/s}]\)</span>
+          </div>
+        </div>
+
+        <div id="data-bottom">
+          <div class="data">
+            <span>\(f\)</span>
+            <span id="source-freq" class="value">400.00</span>
+            <span class="unit">\([\mbox{Hz}]\)</span>
+          </div>
+          <div class="data">
+            <span>\(f'\)</span>
+            <span id="observer-freq" class="value">452.00</span>
+            <span class="unit">\([\mbox{Hz}]\)</span>
+          </div>
+        </div>
+
+      </div>
+
     </div>
 
-    <canvas id="phenom-cvs" width="850" height="170"></canvas>
-
-    <div id="graph-cv" class="graph-2">
-      <hr>
-    </div>
-
-    <div id="graph-cv" class="graph-3">
-      <hr>
-    </div>
-
-  </div>
-
-  <div id="area-wrapper">
-
-    <div id="formula-area">
+    <div id="formula-section">
 
       <div id="doppler">
         <p>
@@ -55,57 +103,50 @@
 
       <div id="alpha">
         <p>
-          \(f\)：音源での周波数 \([\mbox{Hz}]\)
-        </p>
-        <p>
-          \(f'\)：観測者での周波数 \([\mbox{Hz}]\)
-        </p>
-        <p>
-          \(v_s\)：音源の動く速度 \([\mbox{m/s}]\)
-        </p>
-        <p>
-          \(v_o\)：観測者の動く速度 \([\mbox{m/s}]\)
-        </p>
-        <p>
           \(V\)：音速 \([\mbox{m/s}]\)
         </p>
-      </div>
-
-    </div>
-
-    <div id="ope-area">
-
-      <select id="select-box" onchange="onChangeSelectBox()">
-        <optgroup label="どちらかが静止">
-          <option value="1" selected>① 観測者が静止しているとき</option>
-          <option value="2">② 観測者が静止しているとき (ゆっくり)</option>
-          <option value="3">③ 音源が静止しているとき</option>
-          <option value="4">④ 音源が静止しているとき (ゆっくり)</option>
-        </optgroup>
-        <optgroup label="両方とも動く">
-          <option value="5">⑤ 音源が観測者を追い越すとき</option>
-          <option value="6">⑥ 観測者が音源を追い越すとき</option>
-          <option value="7">⑦ 音源と観測者がすれ違うとき</option>
-        </optgroup>
-        <optgroup label="両方とも静止">
-          <option value="8">⑧ 音源と観測者が静止しているとき</option>
-        </optgroup>
-      </select>
-
-      <div id="freq-wrapper">
-        <span>\(f'\)</span>
-        <input id="freq" type="text" value="400.00">
-        <span>\([\mbox{Hz}]\)</span>
-      </div>
-
-      <div id="btn-wrapper">
-        <button id="start-btn" type="button" onclick="onStartButtonClick();">スタート / ストップ</button>
-        <button id="reset-btn" type="button" onclick="onResetButtonClick();">リセット</button>
+        <p>
+          \(v_s\)：車の動く速度 \([\mbox{m/s}]\)
+        </p>
+        <p>
+          \(v_o\)：人の動く速度 \([\mbox{m/s}]\)
+        </p>
+        <p>
+          \(f\)：車が出す音の周波数 \([\mbox{Hz}]\)
+        </p>
+        <p>
+          \(f'\)：人が聞く音の周波数 \([\mbox{Hz}]\)
+        </p>
       </div>
 
     </div>
 
   </div>
+
+  <div id="anim-area">
+
+    <div id="graph1">
+      <p><span>車が出す音の振動のグラフ</span></p>
+      <canvas id="graph1-cvs" width="850" height="80"></canvas>
+    </div>
+
+    <div id="phenom">
+      <p><span>再現エリア</span></p>
+      <canvas id="phenom-cvs" width="850" height="160"></canvas>
+    </div>
+
+    <div id="graph2">
+      <p><span>人が聞く音の振動のグラフ</span></p>
+      <canvas id="graph2-cvs" width="850" height="80"></canvas>
+    </div>
+
+    <div id="graph3">
+      <p><span>両者の振動のグラフ</span></p>
+      <canvas id="graph3-cvs" width="850" height="80"></canvas>
+    </div>
+
+  </div>
+
   <script src="../js/objects.js"></script>
   <script src="../js/drawing.js"></script>
   <script src="../js/animation.js"></script>

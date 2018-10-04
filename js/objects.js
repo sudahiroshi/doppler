@@ -58,7 +58,7 @@ class Wave {
     this.radius = 0;
   }
 
-  update_run(source_x) {
+  update(source_x) {
     if (source_x >= this.x - 45) {
       this.radius += 1.4;
     } else {
@@ -72,4 +72,19 @@ class Wave {
     ctx.arc(this.x, 85, this.radius, 0, Math.PI * 2, true);
     ctx.stroke();
   }
+}
+
+class HiddenObj {
+  constructor() {
+    this.x = 0;
+  }
+
+  update() {
+    this.x += 0.6;
+  }
+
+  // render(ctx) {
+  //   ctx.beginPath();
+  //   ctx.fillRect(this.x, 70, 8, 8);
+  // }
 }

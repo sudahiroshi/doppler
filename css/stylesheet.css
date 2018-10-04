@@ -1,4 +1,4 @@
-html {
+body {
   width: 900px;
   height: 680px;
   text-align: center;
@@ -9,40 +9,112 @@ html {
   outline: none;
 }
 
-#anim-area {
-  background: rgba(97, 104, 106, 0.31);
-  height: 485px;
-  padding-top: 30px;
-  line-height: 0;
+#user-area {
+  height: 150px;
 }
 
-#graph-cv {
+#section-wrapper, #formula-section {
+  float: left;
+}
+
+#section-wrapper {
+  height: 150px;
+}
+
+#ope-section {
+  background: rgba(160, 205, 223, 0.95);
+  height: 55%;
+}
+
+#select-box {
   background: white;
-  width: 850px;
-  height: 90px;
-  display: inline-block;
-  margin: 4px 0;
+  width: 400px;
+  height: 30px;
+  margin-top: 7px;
+  font-size: 15px;
 }
 
-#graph-cv hr {
-  margin-top: 45px;
-  border: dashed .5px;
+#btn-wrapper {
+  margin-top: 7px;
+  margin-left: 100px;
 }
 
-#phenom-cvs {
+#btn-wrapper button {
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#E6E6E6));
+  height: 32px;
+  font-size: 12px;
+  float: left;
+  border-radius: 4px;
+}
+
+#start-btn {
+  width: 140px;
+  margin-right: 5px;
+}
+
+#reset-btn {
+  width: 75px;
+}
+
+#calc-section {
+  background: rgb(210, 210, 210);
+  height: 45%;
+}
+
+#data-top {
+  height: 45%;
+  margin-left: 20px;
+}
+
+#data-top .data {
+  float: left;
+  width: 33%;
+  margin-top: 5px;
+}
+
+#data-top .value {
   background: white;
-  display: inline-block;
-  margin: 8px 0;
+  border: solid 1.5px rgb(200, 200, 200);
+  padding: 3px 4px;
 }
 
-#formula-area {
-  background: rgba(255, 153, 0, 0.4);
+#data-top .unit {
+  font-size: 11px;
+}
+
+#data-bottom {
+  height: 55%;
+  font-size: 19px;
+  margin-left: 60px;
+}
+
+#data-bottom .data {
+  float: left;
+  width: 50%;
+  margin-top: 3px;
+}
+
+#data-bottom .value {
+  background: white;
+  border: solid 1.5px rgb(200, 200, 200);
+  padding: 3px 4px;
+}
+
+#data-bottom .unit {
+  font-size: 14px;
+}
+
+#formula-section {
+  background: rgba(255, 239, 131, 0.63);
+  height: 150px;
   width: 52%;
   text-align: left;
 }
 
 #doppler {
-  margin: 15px 25px;
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 #doppler p {
@@ -52,7 +124,7 @@ html {
 
 #alpha {
   margin-top: 10px;
-  margin-left: 10px;
+  /* margin-left: 10px; */
 }
 
 #alpha p {
@@ -66,57 +138,40 @@ html {
   float: left;
 }
 
-#ope-area {
-  background: rgba(4, 143, 9, 0.38);
+#section-wrapper {
   width: 48%;
 }
 
-#select-box {
-  background: white;
-  width: 380px;
-  height: 30px;
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-right: 17px;
-  vertical-align: middle;
-  font-size: 15px;
-  font-family: inherit;
+#anim-area {
+  background: rgba(0, 0, 0, 0.11);
+  height: 530px;
+  line-height: 0;
 }
 
-#freq-wrapper {
-  margin-top: 40px;
-  margin-left: 30px;
+#anim-area div {
+  margin-bottom: 2px;
 }
 
-#freq {
-  height: 30px;
-  width: 70px;
-  font-size: 20px;
-  margin-left: 5px;
-  padding: 0 5px;
-}
-
-#btn-wrapper {
-  margin-top: 10px;
+#anim-area p {
+  font-size: 13px;
+  text-align: left;
+  margin-bottom: 6px;
   margin-left: 20px;
+  display: inline-block;
+  width: 850px;
 }
 
-#btn-wrapper button {
+#anim-area span {
+  padding: 4px;
+  background: rgb(200, 200, 200);
+}
+
+#anim-area canvas {
+  border: solid 3px rgb(200, 200, 200);
   background: white;
-  height: 50px;
-  width: 180px;
-  margin-bottom: 5px;
-  padding: 0;
-  display: block;
-  font-size: 15px;
-  font-family: inherit;
+  display: inline-block;
 }
 
-#freq-wrapper, #btn-wrapper {
-  float: left;
-}
-
-#formula-area, #ope-area {
-  float: left;
-  height: 150px;
+#graph1 {
+  padding-top: 8px;
 }
