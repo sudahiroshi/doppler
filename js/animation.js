@@ -8,6 +8,18 @@ var callbackId;
 var phenom_cvs = document.getElementById("phenom-cvs");
 var phenom_ctx = phenom_cvs.getContext("2d");
 
+// 音源の振動グラフのcanvas取得
+var graph1_cvs = document.getElementById("graph1-cvs");
+var graph1_ctx = graph1_cvs.getContext("2d");
+
+// 音源の振動グラフのcanvas取得
+var graph2_cvs = document.getElementById("graph2-cvs");
+var graph2_ctx = graph2_cvs.getContext("2d");
+
+// 音源の振動グラフのcanvas取得
+var graph3_cvs = document.getElementById("graph3-cvs");
+var graph3_ctx = graph3_cvs.getContext("2d");
+
 // ロード時の描画
 window.onload = function() {
   onChangeSelectBox();
@@ -52,6 +64,8 @@ function onResetButtonClick() {
 
   window.cancelAnimationFrame(callbackId);
   phenom_ctx.clearRect(0, 0, phenom_cvs.width, phenom_cvs.height);
+  graph1_ctx.clearRect(0, 0, graph1_cvs.width, graph1_cvs.height);
+  graph3_ctx.clearRect(0, 0, graph1_cvs.width, graph1_cvs.height);
 
   objStore();
 }

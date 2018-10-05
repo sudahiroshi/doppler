@@ -4,6 +4,8 @@ function objects(source_x, source_vel, observer_x, observer_vel) {
   source = new Source(source_x, source_vel);
   observer = new Observer(observer_x, observer_vel);
   hiddenObj = new HiddenObj();
+  graphLine = new GraphLine();
+  srcGraph = new SrcGraph();
   objectsRender();
 }
 
@@ -12,6 +14,9 @@ function objectsRender() {
   line.render(phenom_ctx);
   source.render(phenom_ctx);
   observer.render(phenom_ctx);
+  graphLine.render(graph1_ctx);
+  graphLine.render(graph2_ctx);
+  graphLine.render(graph3_ctx);
 }
 
 // 各場合毎のオブジェクト定義と初期画面描画
@@ -50,20 +55,30 @@ function waveListStore() {
 // アニメーションの描画
 function loop() {
   phenom_ctx.clearRect(0, 0, phenom_cvs.width, phenom_cvs.height);
+  graph1_ctx.clearRect(0, 0, graph1_cvs.width, graph1_cvs.height);
+  graph3_ctx.clearRect(0, 0, graph1_cvs.width, graph1_cvs.height);
 
   objectsRender();
 
   if (option === 1) {
     observerStop();
+    runSrcGraph();
   } else if (option === 3) {
     sourceStop();
+    stopSrcGraph();
   } else if (option === 5 || option === 6 || option === 7) {
     cross();
+    runSrcGraph();
   } else if (option === 8) {
     stop();
+    stopSrcGraph();
   }
 
-  phenom_ctx.save();
+  if (source.x >= phenom_cvs.width || observer.x >= phenom_cvs.width) {
+    onResetButtonClick();
+  }
+
+  // phenom_ctx.save();
   callbackId = window.requestAnimationFrame(loop);
 }
 
@@ -101,4 +116,20 @@ function stop() {
     }
   }
   waveList.forEach((wave) => wave.render(phenom_ctx));
+}
+
+function stopSrcGraph() {
+  srcGraph.update_stop();
+  srcGraph.render_stop_left(graph1_ctx);
+  srcGraph.render_stop_right(graph1_ctx);
+  srcGraph.render_stop_left(graph3_ctx);
+  srcGraph.render_stop_right(graph3_ctx);
+}
+
+function runSrcGraph() {
+  srcGraph.update_run();
+  srcGraph.render_run_left(graph1_ctx);
+  srcGraph.render_run_right(graph1_ctx);
+  srcGraph.render_run_left(graph3_ctx);
+  srcGraph.render_run_right(graph3_ctx);
 }
