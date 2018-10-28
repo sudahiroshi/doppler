@@ -2,20 +2,21 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="../css/stylesheet.css">
-  <script async src="../MathJax-2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <link rel="stylesheet" href="css/stylesheet.css">
+  <script async src="MathJax-2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <script src="bignumberjs/bignumber.js"></script>
   <script>
     // 画像のロード
-    var srcList = [
-      "../img/soundsource.svg",
-      "../img/observer_stop.svg",
-      "../img/observer_run.svg",
-      "../img/observer_run_reverse.svg"
+    const srcList = [
+      "img/soundsource.svg",
+      "img/observer_stop.svg",
+      "img/observer_run.svg",
+      "img/observer_run_reverse.svg"
     ];
-    var imgList = [];
 
-    for (var i = 0; i < srcList.length; i++) {
-      imgList[i] = new Image();
+    const imgList = [];
+    for ( let i in srcList ) {
+      imgList[i]     = new Image();
       imgList[i].src = srcList[i];
     }
   </script>
@@ -30,19 +31,17 @@
       <div id="ope-section">
 
         <select id="select-box" onchange="onChangeSelectBox()">
-          <optgroup label="どちらかが止まっている場合">
-            <option value="1" selected>① 立ち止まる人のそばを車が通り過ぎるとき</option>
-            <option value="2">② 立ち止まる人のそばを車が通り過ぎるとき (ゆっくり)</option>
-            <option value="3">③ 停車中の車のそばを人が通り過ぎるとき</option>
-            <option value="4">④ 停車中の車のそばを人が通り過ぎるとき (ゆっくり)</option>
+          <optgroup label="どちらかが停止している場合">
+            <option value="1">① 救急車：動く 人：停止</option>
+            <option value="3">③ 救急車：停止 人：動く</option>
           </optgroup>
-          <optgroup label="両方とも動く場合">
-            <option value="5">⑤ 車が人を追い抜くとき</option>
-            <option value="6">⑥ 人が車を追い抜くとき</option>
-            <option value="7">⑦ 車と人がすれ違うとき</option>
+          <optgroup label="両者とも動く場合">
+            <option value="5">⑤ 救急車：速い 人：遅い</option>
+            <option value="6" selected>⑥ 救急車：遅い 人：速い</option>
+            <option value="7">⑦ 逆方向に進む</option>
           </optgroup>
-          <optgroup label="両方とも止まっている場合">
-            <option value="8">⑧ 車と人が止まっているとき</option>
+          <optgroup label="両者とも停止している場合">
+            <option value="8">⑧ 救急車：停止 人：停止</option>
           </optgroup>
         </select>
 
@@ -147,8 +146,8 @@
 
   </div>
 
-  <script src="../js/objects.js"></script>
-  <script src="../js/drawing.js"></script>
-  <script src="../js/animation.js"></script>
+  <script src="js/objects.js"></script>
+  <script src="js/animation.js"></script>
+  <script src="js/operation.js"></script>
 </body>
 </html>

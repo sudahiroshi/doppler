@@ -22,7 +22,7 @@ body {
 }
 
 #ope-section {
-  background: rgba(160, 205, 223, 0.95);
+  background: rgba(189, 227, 242, 0.95);
   height: 55%;
 }
 
@@ -32,6 +32,7 @@ body {
   height: 30px;
   margin-top: 7px;
   font-size: 15px;
+  border: solid 1px rgb(110, 110, 110);
 }
 
 #btn-wrapper {
@@ -75,6 +76,7 @@ body {
 #data-top .value {
   background: white;
   border: solid 1.5px rgb(200, 200, 200);
+  border-radius: 4px;
   padding: 3px 4px;
 }
 
@@ -97,6 +99,7 @@ body {
 #data-bottom .value {
   background: white;
   border: solid 1.5px rgb(200, 200, 200);
+  border-radius: 4px;
   padding: 3px 4px;
 }
 
@@ -105,7 +108,7 @@ body {
 }
 
 #formula-section {
-  background: rgba(255, 239, 131, 0.63);
+  background: rgba(255, 245, 175, 0.63);
   height: 150px;
   width: 52%;
   text-align: left;
@@ -124,7 +127,7 @@ body {
 
 #alpha {
   margin-top: 10px;
-  /* margin-left: 10px; */
+  margin-left: 10px;
 }
 
 #alpha p {
