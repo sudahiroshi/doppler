@@ -169,9 +169,21 @@ body {
   background: rgb(200, 200, 200);
 }
 
-#anim-area canvas {
+#bar {
+  position: absolute;
+  top: 160px;
+  left: 33px
+}
+
+#graph1-cvs, #graph3-cvs, #phenom-cvs {
   border: solid 3px rgb(200, 200, 200);
   background: white;
+  display: inline-block;
+}
+
+#graph2-cvs {
+  border: solid 3px rgb(200, 200, 200);
+  background: rgb(247, 247, 162);
   display: inline-block;
 }
 

@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/stylesheet.css">
   <script async src="MathJax-2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-  <script src="bignumberjs/bignumber.js"></script>
   <script>
     // 画像のロード
     const srcList = [
@@ -31,18 +30,17 @@
       <div id="ope-section">
 
         <select id="select-box" onchange="onChangeSelectBox()">
-          <optgroup label="どちらかが停止している場合">
-            <option value="1">① 救急車：動く 人：停止</option>
-            <option value="3">③ 救急車：停止 人：動く</option>
+          <option value="6" selected>① 音波が観測者に伝わるしくみ</option>
+          <option value="0">② 音波に疎密ができるしくみ</option>
+          <optgroup label="③ 音源が観測者を追い越すとき">
+            <option value="1">③ (1) 救急車が止まっている人を追い越すとき</option>
+            <option value="3">③ (2) 救急車が動く人を追い越すとき</option>
           </optgroup>
-          <optgroup label="両者とも動く場合">
-            <option value="5">⑤ 救急車：速い 人：遅い</option>
-            <option value="6" selected>⑥ 救急車：遅い 人：速い</option>
-            <option value="7">⑦ 逆方向に進む</option>
+          <optgroup label="④ 観測者が音源を追い越すとき">
+            <option value="2">④ (1) 人が止まっている救急車を追い越すとき</option>
+            <option value="4">④ (2) 人が動く救急車を追い越すとき</option>
           </optgroup>
-          <optgroup label="両者とも停止している場合">
-            <option value="8">⑧ 救急車：停止 人：停止</option>
-          </optgroup>
+          <option value="5">⑤ 互いに逆方向に進むとき</option>
         </select>
 
         <div id="btn-wrapper">
@@ -62,12 +60,12 @@
           </div>
           <div class="data">
             <span>\(v_s\)</span>
-            <span id="source-vel" class="value">40.00</span>
+            <span id="source-vel" class="value"></span>
             <span class="unit">\([\mbox{m/s}]\)</span>
           </div>
           <div class="data">
             <span>\(v_o\)</span>
-            <span id="observer-vel" class="value">0.00</span>
+            <span id="observer-vel" class="value"></span>
             <span class="unit">\([\mbox{m/s}]\)</span>
           </div>
         </div>
@@ -75,12 +73,12 @@
         <div id="data-bottom">
           <div class="data">
             <span>\(f\)</span>
-            <span id="source-freq" class="value">400.00</span>
+            <span id="source-freq" class="value"></span>
             <span class="unit">\([\mbox{Hz}]\)</span>
           </div>
           <div class="data">
             <span>\(f'\)</span>
-            <span id="observer-freq" class="value">452.00</span>
+            <span id="observer-freq" class="value"></span>
             <span class="unit">\([\mbox{Hz}]\)</span>
           </div>
         </div>
@@ -96,7 +94,7 @@
           ドップラー効果
         </p>
         <p>
-          \[ f'=\frac{V\pm{v_o}}{V\pm{v_s}}f \]
+          \[ f'=\frac{V-v_o}{V-v_s}f \]
         </p>
       </div>
 
@@ -105,13 +103,13 @@
           \(V\)：音速 \([\mbox{m/s}]\)
         </p>
         <p>
-          \(v_s\)：車の動く速度 \([\mbox{m/s}]\)
+          \(v_s\)：救急車の移動速度 \([\mbox{m/s}]\)
         </p>
         <p>
-          \(v_o\)：人の動く速度 \([\mbox{m/s}]\)
+          \(v_o\)：人の移動速度 \([\mbox{m/s}]\)
         </p>
         <p>
-          \(f\)：車が出す音の周波数 \([\mbox{Hz}]\)
+          \(f\)：救急車が発する音の周波数 \([\mbox{Hz}]\)
         </p>
         <p>
           \(f'\)：人が聞く音の周波数 \([\mbox{Hz}]\)
@@ -124,8 +122,12 @@
 
   <div id="anim-area">
 
+    <div id="bar">
+      <canvas id="bar-cvs" width="850" height="510"></canvas>
+    </div>
+
     <div id="graph1">
-      <p><span>車が出す音の振動のグラフ</span></p>
+      <p><span>救急車が発する音の振動グラフ</span></p>
       <canvas id="graph1-cvs" width="850" height="80"></canvas>
     </div>
 
@@ -135,19 +137,26 @@
     </div>
 
     <div id="graph2">
-      <p><span>人が聞く音の振動のグラフ</span></p>
+      <p><span>人が聞く音の振動グラフ</span></p>
       <canvas id="graph2-cvs" width="850" height="80"></canvas>
     </div>
 
     <div id="graph3">
-      <p><span>両者の振動のグラフ</span></p>
+      <p><span>両者の振動グラフ</span></p>
       <canvas id="graph3-cvs" width="850" height="80"></canvas>
     </div>
 
   </div>
 
-  <script src="js/objects.js"></script>
-  <script src="js/animation.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/option0.js"></script>
+  <script src="js/option1.js"></script>
+  <script src="js/option2.js"></script>
+  <script src="js/option3.js"></script>
+  <script src="js/option4.js"></script>
+  <script src="js/option5.js"></script>
+  <script src="js/option6.js"></script>
+  <script src="js/branch.js"></script>
   <script src="js/operation.js"></script>
 </body>
 </html>

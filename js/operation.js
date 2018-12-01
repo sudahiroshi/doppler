@@ -2,29 +2,17 @@ let clickCount = 0,
   callbackId = 0,
   option = parseInt(document.getElementById('select-box').value),
   isMoving = false,
+  isAudioPlay = false,
   waveList = [],
-  time = 0,
-  nowTime = 0,
-  lastTime = 0;
-
-// 再現エリアのcanvas取得
-const phenom_cvs = document.getElementById('phenom-cvs'),
-  phenom_ctx = phenom_cvs.getContext('2d'),
-
-  // 音源の振動グラフのcanvas取得
-  graph1_cvs = document.getElementById('graph1-cvs'),
-  graph1_ctx = graph1_cvs.getContext('2d'),
-
-  // 観測者の振動グラフのcanvas取得
-  graph2_cvs = document.getElementById('graph2-cvs'),
-  graph2_ctx = graph2_cvs.getContext('2d'),
-
-  // 両者の振動グラフのcanvas取得
-  graph3_cvs = document.getElementById('graph3-cvs'),
-  graph3_ctx = graph3_cvs.getContext('2d');
+  obsWaveLeftList = [],
+  obsWaveRightList = [];
 
 // ロード時の描画
-window.onload = () => imgList.onload = onResetButtonClick();
+window.onload = () => {
+  audioObj(0.00);
+  oscNode.start();
+  imgList.onload = onResetButtonClick();
+}
 
 // セレクトボックスの値が選択されたときの描画
 const onChangeSelectBox = () => onResetButtonClick();
@@ -33,16 +21,19 @@ const onChangeSelectBox = () => onResetButtonClick();
 const onStartButtonClick = () => {
   clickCount++;
 
-  if (clickCount === 1) waveListStore();
+  if (clickCount === 1) waveListStore[option]();
 
   if (!isMoving) {
     // アニメーション開始・再開
-    loop();
+    loop[option]();
     isMoving = true;
+    isAudioPlay = true;
   } else {
     // アニメーション一時停止
     window.cancelAnimationFrame(callbackId);
+    oscNode.stop();
     isMoving = false;
+    isAudioPlay = false;
   }
 };
 
@@ -50,17 +41,31 @@ const onStartButtonClick = () => {
 const onResetButtonClick = () => {
   window.cancelAnimationFrame(callbackId);
 
-  phenom_ctx.clearRect(0, 0, phenom_cvs.width, phenom_cvs.height);
-  graph1_ctx.clearRect(0, 0, graph1_cvs.width, graph1_cvs.height);
-  graph2_ctx.clearRect(0, 0, graph1_cvs.width, graph1_cvs.height);
-  graph3_ctx.clearRect(0, 0, graph1_cvs.width, graph1_cvs.height);
+  clearCvs();
+  oscNode.stop();
 
   clickCount = 0;
   callbackId = 0;
   option = parseInt(document.getElementById('select-box').value);
   isMoving = false;
+  isAudioPlay = false;
   waveList = [];
+  obsWaveLeftList = [];
+  obsWaveRightList = [];
 
-  objStore();
-  objRender();
+  objCreate[option]();
+  objRender[option]();
+
+  audioObj(0.00);
+  oscNode.start();
+
+  disp(0.00, 0.00, 0.00);
 };
+
+// ショートカットキー
+document.onkeydown = e => {
+  document.activeElement.blur();
+  if (e.keyCode === 27) onResetButtonClick();
+  if (e.keyCode === 32) onStartButtonClick();
+  if (e.keyCode === 16) document.getElementById('select-box').focus();
+}
