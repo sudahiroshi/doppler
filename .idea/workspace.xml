@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c4d4f94-d203-41eb-920a-eb1ed9594376" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/operation.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/operation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/option0.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/option0.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/option1.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/option1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/option2.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/option2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/option3.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/option3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/option4.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/option4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/option5.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/option5.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/option6.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/option6.js" afterDir="false" />
-    </list>
+    <list default="true" id="8c4d4f94-d203-41eb-920a-eb1ed9594376" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -26,7 +15,7 @@
     <session id="-1127737071">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.4" value="6" />
@@ -309,12 +298,12 @@
       <workItem from="1539327424761" duration="851000" />
       <workItem from="1539328538556" duration="27254000" />
       <workItem from="1539586201181" duration="4016000" />
-      <workItem from="1543649795491" duration="233000" />
+      <workItem from="1543649795491" duration="281000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44480000" />
+    <option name="totallyTimeSpent" value="44528000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
